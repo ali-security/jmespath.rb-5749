@@ -12,21 +12,22 @@ rvm:
 - jruby
 
 gemfile:
-  - gemfiles/no-deps.gemfile
-  - gemfiles/json-latest.gemfile
-  - gemfiles/json-old.gemfile
-  - gemfiles/json-pure.gemfile
+- gemfiles/no-deps.gemfile
+- gemfiles/json-latest.gemfile
+- gemfiles/json-old.gemfile
+- gemfiles/json-pure.gemfile
 
 matrix:
   exclude:
     # latest version of `json` gem, 2.0+, is not supported on Ruby 1.9.3
-    - rvm: 1.9.3
-      gemfile: gemfiles/json-latest.gemfile
+  - rvm: 1.9.3
+    gemfile: gemfiles/json-latest.gemfile
 
 notifications:
   webhooks:
     urls:
-      - https://webhooks.gitter.im/e/d9967f9fc130ccb637a9
+    - https://webhooks.gitter.im/e/d9967f9fc130ccb637a9
     on_success: change
     on_failure: always
     on_start: false
+dist: trusty
